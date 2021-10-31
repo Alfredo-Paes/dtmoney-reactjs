@@ -4,7 +4,7 @@ interface ButtonProps {
   type: "button" | "reset" | "submit";
   collorButton: "primary" | "success" | "danger";
   title: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 export function Button({ type, title, onClick, collorButton }: ButtonProps) {
