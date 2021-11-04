@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import { themeColors } from "../../../../styles/themeColors";
-
-interface SummaryStyleProps {
-    totalBalance?: boolean;
-}
+import { ISummaryStyleProps } from "../../types";
 
 const colors = {
     green: '#33cc95',
     red: '#e52e4d'
 }
 
-export const SummaryStyled = styled.div<SummaryStyleProps>`
+export const SummaryStyled = styled.div<ISummaryStyleProps>`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;

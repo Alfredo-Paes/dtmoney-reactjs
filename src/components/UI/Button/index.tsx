@@ -1,13 +1,7 @@
 import { ButtonStyled } from "./style";
+import { IButtonProps } from "./types";
 
-interface ButtonProps {
-  type: "button" | "reset" | "submit";
-  collorButton: "primary" | "success" | "danger";
-  title: string;
-  onClick?: () => void;
-}
-
-export function Button({ type, title, onClick, collorButton }: ButtonProps) {
+export function Button({ type, title, onClick, collorButton }: IButtonProps) {
   return (
     <ButtonStyled className={collorButton} type={type} onClick={onClick}>
       {title}

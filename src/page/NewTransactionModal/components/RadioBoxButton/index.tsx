@@ -1,14 +1,7 @@
 import React from "react";
+import { IRadioBoxButtonProps } from "../../types";
 import { RadioBoxButtonStyle } from "./style";
 
-interface RadioBoxButtonProps {
-  type: "button" | "reset" | "submit";
-  title: string;
-  isActive: boolean;
-  activeColor: "red" | "green";
-  icon: string;
-  onClick: () => void;
-}
 
 export function RadioBoxButton({
   type,
@@ -17,7 +10,7 @@ export function RadioBoxButton({
   activeColor,
   icon,
   onClick,
-}: RadioBoxButtonProps) {
+}: IRadioBoxButtonProps) {
   return (
     <RadioBoxButtonStyle
       type={type}

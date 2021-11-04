@@ -1,15 +1,9 @@
-import React, { ReactNode } from "react";
 import ReactDOM from "react-dom";
 
+import { IModalProps } from "./types";
 import closeImg from "../../../assets/close.svg";
 import { ModalClose, ModalContent, ModalOverlay } from "./style";
 
-interface ModalProps {
-  children?: ReactNode;
-  isOpen: boolean;
-  onClickClose: () => void;
-  titleModal?: string;
-}
 
 const portalRoot = document.getElementById("portal-root");
 
@@ -18,7 +12,7 @@ export function Modal({
   isOpen,
   onClickClose,
   titleModal,
-}: ModalProps) {
+}: IModalProps) {
   if (!isOpen) {
     return null;
   }

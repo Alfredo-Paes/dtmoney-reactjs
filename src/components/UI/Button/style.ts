@@ -1,10 +1,5 @@
 import styled from "styled-components";
-
 import { themeColors } from "../../../styles/themeColors";
-
-interface ButtonStyledProps {
-    collorButton: string;
-}
 
 export const ButtonStyled = styled.button`
     font-size: 1rem;

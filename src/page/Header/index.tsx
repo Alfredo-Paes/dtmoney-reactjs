@@ -1,12 +1,10 @@
 import logoImg from "../../assets/logo.svg";
 import { Button } from "../../components/UI/Button";
 import { Container, HeaderStyled } from "./style";
+import { IHeaderProps } from "./types";
 
-interface HeaderProps {
-  onOpenNewTransactionModal: () => void;
-}
 
-export function Header({ onOpenNewTransactionModal }: HeaderProps) {
+export function Header({ onOpenNewTransactionModal }: IHeaderProps) {
   return (
     <HeaderStyled>
       <Container>

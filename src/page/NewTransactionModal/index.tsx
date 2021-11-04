@@ -6,16 +6,14 @@ import { NewTransactionModalStyle, TransactionTypeContainer } from "./style";
 import { Button } from "../../components/UI/Button";
 import { Modal } from "../../components/UI/Modal";
 import { RadioBoxButton } from "./components/RadioBoxButton";
+import { INewTransactionModalProps } from "./types";
 
-interface NewTransactionModalProps {
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
+
 
 export function NewTransactionModal({
   isOpen,
   onRequestClose,
-}: NewTransactionModalProps) {
+}: INewTransactionModalProps) {
   const { createTransaction } = useTransactions();
 
   const [title, setTitle] = useState("");

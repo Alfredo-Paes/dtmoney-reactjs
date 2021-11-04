@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import { darken, transparentize } from 'polished'
 import { themeColors } from "../../../../styles/themeColors";
+import { IRadioBoxButtonStyleProps } from "../../types";
 
-interface RadioBoxButtonStyleProps {
-    isActive: boolean;
-    activeColor: 'green' | 'red';
-}
 
-export const RadioBoxButtonStyle = styled.button<RadioBoxButtonStyleProps>`
+
+export const RadioBoxButtonStyle = styled.button<IRadioBoxButtonStyleProps>`
     display: flex;
     align-items: center;
     justify-content: center;
