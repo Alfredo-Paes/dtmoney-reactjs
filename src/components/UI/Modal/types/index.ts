@@ -6,3 +6,7 @@ export interface IModalProps {
     onClickClose: () => void;
     titleModal?: string;
 }
+
+export interface IKeydownHandler {
+    key: string;
+}
