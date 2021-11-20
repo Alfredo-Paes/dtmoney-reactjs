@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { ReactNode,  useEffect } from "react";
 import ReactDOM from "react-dom";
 
 import closeImg from "../../../assets/close.svg";
@@ -11,6 +11,10 @@ interface ModalProps {
   titleModal?: string;
 }
 
+interface IKeydownHandler {
+  key: string;
+}
+
 const portalRoot = document.getElementById("portal-root");
 
 export function Modal({
@@ -19,6 +23,17 @@ export function Modal({
   onClickClose,
   titleModal,
 }: ModalProps) {
+
+  const  keydownHandler = ({ key } : IKeydownHandler) : void => {
+    if (key === 'Escape') onClickClose();
+    return;
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', keydownHandler);
+    return () => document.removeEventListener('keydown', keydownHandler);
+  });
+
   if (!isOpen) {
     return null;
   }
