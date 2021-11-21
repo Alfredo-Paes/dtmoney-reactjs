@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useCallback, SetStateAction } from "react";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { useTransactions } from "../../hooks/useTransactions";
@@ -7,8 +7,7 @@ import { Button } from "../../components/UI/Button";
 import { Modal } from "../../components/UI/Modal";
 import { RadioBoxButton } from "./components/RadioBoxButton";
 import { INewTransactionModalProps } from "./types";
-
-
+import { Input } from "../../components/UI/Input";
 
 export function NewTransactionModal({
   isOpen,
@@ -38,6 +37,10 @@ export function NewTransactionModal({
     onRequestClose();
   }
 
+  const handleOnChangeInputAmount = (evt: { target: { value: any; }; }) => {
+    setAmount(evt.target.value);
+  }
+
   return (
     <Modal
       isOpen={isOpen}
@@ -50,11 +53,18 @@ export function NewTransactionModal({
           onChange={(evt) => setTitle(evt.target.value)}
         />
 
-        <input
+        {/* {<input
           type='number'
           placeholder='Valor'
           value={amount}
           onChange={(evt) => setAmount(Number(evt.target.value))}
+        />} */}
+
+       <Input 
+          placeholder="Valor"
+          typeInput="currency" 
+          value={amount}
+          onChange={handleOnChangeInputAmount}
         />
 
         <TransactionTypeContainer>

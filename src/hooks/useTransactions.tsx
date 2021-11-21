@@ -40,6 +40,5 @@ export function TransactionsProvider({ children }: ITransactionsProviderProps) {
 
 export function useTransactions(){
   const context = useContext(TransactionsContext);
-
   return context
 }
